@@ -9,7 +9,8 @@
                 "${workspaceRoot}/Drivers/STM32F4xx_HAL_Driver/Inc",
                 "${workspaceRoot}/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/",
                 "${workspaceRoot}/Drivers/CMSIS/Device/ST/STM32F1xx/Include",
-                "${workspaceRoot}/Drivers/CMSIS/Include"
+                "${workspaceRoot}/Drivers/CMSIS/Include",
+                "${workspaceRoot}periphery/Inc/"
             ],
             "cStandard": "c11",
             "cppStandard": "c++17",
