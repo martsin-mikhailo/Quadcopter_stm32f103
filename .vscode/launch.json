@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "openocd",
+            "cwd": "${workspaceRoot}",                         //робоча папка
+            "executable": "build/Quadcopter_stm32f103.elf",            //скомпільована прошивка
+            "svdFile": "${workspaceRoot}/STM32F412.svd",  //файл для відображення параметрів регістрів під час відладці
+            "name": "Debug (OpenOCD)",
+            "device": "STM32F103C8T6",                //тип проца
+            "configFiles": [                    //файли  конфігурації програматора і проца
+				"interface/stlink-v2.cfg",
+                "target/stm32f1x.cfg"
+			],
+			"gdbpath" : "gdb-multiarch"  //вказати gdb патч
+        }
+    ]
+}
