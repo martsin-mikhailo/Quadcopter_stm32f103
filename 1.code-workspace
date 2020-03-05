@@ -6,19 +6,10 @@
 	],
 	"settings": {
 		"files.associations": {
-			"i2c.h": "c",
-			"i3_outputs.h": "c",
-			"i3_command.h": "c",
-			"i3_adc2.h": "c",
-			"i3_main.h": "c",
-			"rs485.h": "c",
-			"i3_hlw.h": "c",
-			"max1161.h": "c",
-			"uart_hlw.h": "c",
-			"mcp23017.h": "c",
-			"uart.h": "c",
-			"configboard.h": "c",
-			"ssd1306.h": "c"
+			"main.h": "c",
+			"my_main.h": "c",
+			"stm32f1xx_hal.h": "c",
+			"cstdio": "c"
 		}
 	}
 }

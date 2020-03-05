@@ -4,7 +4,7 @@
 
 
 
-void my_main_loop();
+void my_main();
 
 
 
