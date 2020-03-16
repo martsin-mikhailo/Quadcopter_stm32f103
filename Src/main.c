@@ -24,7 +24,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "my_main.h"
-#include "uart.h"
+#include "dbg_uart.h"
 
 /* USER CODE END Includes */
 

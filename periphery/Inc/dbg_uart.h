@@ -1,5 +1,5 @@
-#ifndef __UART_H
-#define __UART_H 
+#ifndef __DBG_UART_H
+#define __DBG_UART_H 
 
 
 // void UART_print(char msg[]);
@@ -8,4 +8,4 @@ void my_printf(const char *fmt, ...);
 
 
 
-#endif /* __UART_H */ 
+#endif /* __DBG_UART_H */ 
