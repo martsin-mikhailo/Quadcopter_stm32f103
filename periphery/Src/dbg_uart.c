@@ -1,21 +1,25 @@
  #include "dbg_uart.h"
- #include "stm32f1xx_hal.h"
- #include <stdint.h>
- #include <string.h>
- #include <stdarg.h>
- #include <stdio.h>
- #include <stdbool.h>
+
 
  #define PRINT_BUFFER_LEN 1024
 
  extern UART_HandleTypeDef huart2;
 
+ static volatile uint8_t uart_busy_flag = 0;
 
 
-void UART_print(char msg[]) 
-{
-  while(HAL_UART_Transmit_IT(&huart2, (uint8_t*) msg, strlen(msg)) != HAL_OK);
+// void dbg_uart_start_receiving() {
+//   while(HAL_UART_Receive_IT(&huart2, &byte_buff, 1) != HAL_OK);
+// }
 
+
+void dbg_uart_TxEndCallback() {
+  uart_busy_flag = 0;
+}
+
+void dbg_uart_RxEndCallback() {
+  //TODO обробка прийнятого байту
+  //HAL_UART_Receive_IT(&huart6, &byte_buff, 1);
 }
 
 
@@ -24,7 +28,8 @@ void __vprint(const char *fmt, va_list argp)
     char string[PRINT_BUFFER_LEN];
     if(0 < vsprintf(string,fmt,argp)) 
     {
-        HAL_UART_Transmit_IT(&huart2, (uint8_t*)string, strlen(string));
+        while(HAL_UART_Transmit_IT(&huart2, (uint8_t*)string, strlen(string)) != HAL_OK);
+        uart_busy_flag = 1;
     }
 }
 
@@ -35,4 +40,3 @@ void my_printf(const char *fmt, ...)
     __vprint(fmt, argp);
     va_end(argp);
 }
-

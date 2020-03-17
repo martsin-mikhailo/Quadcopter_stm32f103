@@ -1,10 +1,19 @@
 #ifndef __DBG_UART_H
 #define __DBG_UART_H 
 
+ #include "stm32f1xx_hal.h"
+ #include <stdint.h>
+ #include <string.h>
+ #include <stdarg.h>
+ #include <stdio.h>
+ #include <stdbool.h>
 
-// void UART_print(char msg[]);
-// void uart_print(const char* fmt, ...);
+
+
 void my_printf(const char *fmt, ...);
+
+void dbg_uart_TxEndCallback();
+void dbg_uart_RxEndCallback();
 
 
 

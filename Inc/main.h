@@ -64,6 +64,8 @@ void Error_Handler(void);
 #define dbg_uart_tx_GPIO_Port GPIOA
 #define dbg_uart_rx_Pin GPIO_PIN_3
 #define dbg_uart_rx_GPIO_Port GPIOA
+#define bt_state_Pin GPIO_PIN_8
+#define bt_state_GPIO_Port GPIOA
 #define bt_uart_tx_Pin GPIO_PIN_9
 #define bt_uart_tx_GPIO_Port GPIOA
 #define bt_uart_rx_Pin GPIO_PIN_10

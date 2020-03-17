@@ -107,7 +107,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  my_printf("MCU_START\n");
+  
   my_main();
   while (1)
   {
@@ -293,6 +293,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(STATUS_LED_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : bt_state_Pin */
+  GPIO_InitStruct.Pin = bt_state_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(bt_state_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : led_1_Pin */
   GPIO_InitStruct.Pin = led_1_Pin;
