@@ -1,23 +1,23 @@
- #include "dbg_uart.h"
+ #include "bt_uart.h"
 
 
  #define PRINT_BUFFER_LEN 1024
 
- extern UART_HandleTypeDef huart2;
+ extern UART_HandleTypeDef huart1;
 
  static volatile uint8_t uart_busy_flag = 0;
 
 
-// void dbg_uart_start_receiving() {
+// void bt_uart_start_receiving() {
 //   while(HAL_UART_Receive_IT(&huart2, &byte_buff, 1) != HAL_OK);
 // }
 
 
-void dbg_uart_TxEndCallback() {
+void bt_uart_TxEndCallback() {
   uart_busy_flag = 0;
 }
 
-void dbg_uart_RxEndCallback() {
+void bt_uart_RxEndCallback() {
   //TODO обробка прийнятого байту
   //HAL_UART_Receive_IT(&huart6, &byte_buff, 1);
 }
@@ -30,11 +30,11 @@ static void __vprint(const char *fmt, va_list argp)
     {
         while(uart_busy_flag);
         uart_busy_flag = 1;
-        while(HAL_UART_Transmit_IT(&huart2, (uint8_t*)string, strlen(string)) != HAL_OK);
+        while(HAL_UART_Transmit_IT(&huart1, (uint8_t*)string, strlen(string)) != HAL_OK);
     }
 }
 
-void dbg_print(const char *fmt, ...)
+void bt_print(const char *fmt, ...)
 {
     va_list argp;
     va_start(argp, fmt);

@@ -10,7 +10,7 @@
 
 
 
-void my_printf(const char *fmt, ...);
+void dbg_print(const char *fmt, ...);
 
 void dbg_uart_TxEndCallback();
 void dbg_uart_RxEndCallback();
