@@ -14,6 +14,7 @@ void bt_print(const char *fmt, ...);
 
 void bt_uart_TxEndCallback();
 void bt_uart_RxEndCallback();
+void bt_uart_start_receiving();
 
 
 

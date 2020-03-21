@@ -25,6 +25,7 @@
 /* USER CODE BEGIN Includes */
 #include "my_main.h"
 #include "dbg_uart.h"
+#include "bt_uart.h"
 
 /* USER CODE END Includes */
 
@@ -107,7 +108,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  
+  bt_uart_start_receiving();
   my_main();
   while (1)
   {

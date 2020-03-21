@@ -57,6 +57,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c \
 periphery/Src/dbg_uart.c \
 periphery/Src/bt_uart.c \
 periphery/Src/uart_callback.c \
+Src/command.c \
 Src/my_main.c
 
 # ASM sources

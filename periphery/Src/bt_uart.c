@@ -1,4 +1,5 @@
  #include "bt_uart.h"
+ #include "command.h"
 
 
  #define PRINT_BUFFER_LEN 1024
@@ -6,11 +7,11 @@
  extern UART_HandleTypeDef huart1;
 
  static volatile uint8_t uart_busy_flag = 0;
+ static uint8_t byte_buff        = 0;
 
-
-// void bt_uart_start_receiving() {
-//   while(HAL_UART_Receive_IT(&huart2, &byte_buff, 1) != HAL_OK);
-// }
+void bt_uart_start_receiving() {
+  while(HAL_UART_Receive_IT(&huart1, &byte_buff, 1) != HAL_OK);
+}
 
 
 void bt_uart_TxEndCallback() {
@@ -18,8 +19,8 @@ void bt_uart_TxEndCallback() {
 }
 
 void bt_uart_RxEndCallback() {
-  //TODO обробка прийнятого байту
-  //HAL_UART_Receive_IT(&huart6, &byte_buff, 1);
+  Command_Proccessing(byte_buff);
+  HAL_UART_Receive_IT(&huart1, &byte_buff, 1);
 }
 
 
