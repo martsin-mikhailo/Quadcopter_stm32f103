@@ -1,9 +1,16 @@
 #ifndef __I3_COMMAND_H
 #define __I3_COMMAND_H
 
-#define COMMAND_START       (char)'#'
 #define COMMAND_FINISH      (char)';'
-#define COMMAND_MAX_LEN     7
+#define COMMAND_MAX_LEN     6
+
+//comand controll
+#define COMMAND_ROLL          (char)'R'
+#define COMMAND_PITCH         (char)'P'
+#define COMMAND_YAW           (char)'Y'
+#define COMMAND_THROTTLE      (char)'T'
+
+
 
 
 #include <stdint.h>
