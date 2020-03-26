@@ -14,8 +14,7 @@ void HAL_UART_TxCpltCallback (UART_HandleTypeDef *huart)
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) 
 {
-  if      (huart->Instance == USART2) dbg_uart_RxEndCallback();
-  else if (huart->Instance == USART1) bt_uart_RxEndCallback();
+  if (huart->Instance == USART1) bt_uart_RxEndCallback();
 }
 
 void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart) 
